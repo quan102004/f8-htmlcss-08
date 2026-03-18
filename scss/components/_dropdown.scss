@@ -7,9 +7,12 @@
     // display: none;
 
     &__inner {
+        --inner-max-height: min(582px, 100vh - 158px);
+        --inner-padding: 30px;
+
         position: relative;
 
-        max-height: min(582px, 100vh - 158px);
+        max-height: var(--inner-max-height);
         padding: 30px;
 
         border-radius: 20px;
@@ -28,12 +31,13 @@
 }
 
 .top-menu {
-    height: 100%;
+    max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
 
     &__main {
         width: 292px;
-        height: 100%;
+        max-height: inherit;
         border-right: 1px solid var(--top-menu-border-color);
+        overflow-y: auto;
     }
 }
 
@@ -67,6 +71,7 @@
         width: 24px;
         height: 24px;
         object-fit: cover;
+        filter: var(--menu-column-icon-color);
     }
 
     &__heading {
