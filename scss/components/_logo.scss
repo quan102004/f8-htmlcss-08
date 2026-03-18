@@ -11,7 +11,6 @@
     }
 
     @include abstracts.breakpoint(sm) {
-        gap: 10px;
         margin-left: 0;
     }
 
